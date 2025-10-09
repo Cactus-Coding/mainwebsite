@@ -50,17 +50,16 @@ joinForm.addEventListener("submit", (e) => {
   joinForm.reset()
 })
 
-// Add scroll effect to navbar
 let lastScroll = 0
 const navbar = document.querySelector(".navbar")
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset
 
-  if (currentScroll > 100) {
-    navbar.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.15)"
+  if (currentScroll > 50) {
+    navbar.classList.add("scrolled")
   } else {
-    navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)"
+    navbar.classList.remove("scrolled")
   }
 
   lastScroll = currentScroll
@@ -69,7 +68,7 @@ window.addEventListener("scroll", () => {
 // Animate elements on scroll
 const observerOptions = {
   threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
+  rootMargin: "0px 0px -100px 0px",
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -81,14 +80,24 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
-// Observe all cards and sections
+// Observe all cards and sections with stagger effect
 document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".about-card, .event-card, .project-card")
+  const animatedElements = document.querySelectorAll(".about-card, .event-card, .project-card, .hero-card")
 
-  animatedElements.forEach((el) => {
+  animatedElements.forEach((el, index) => {
     el.style.opacity = "0"
-    el.style.transform = "translateY(20px)"
-    el.style.transition = "opacity 0.6s ease, transform 0.6s ease"
+    el.style.transform = "translateY(30px)"
+    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`
     observer.observe(el)
+  })
+
+  // Add parallax effect to hero cards
+  const heroCards = document.querySelectorAll(".hero-card")
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset
+    heroCards.forEach((card, index) => {
+      const speed = 0.05 * (index + 1)
+      card.style.transform = `translateY(${scrolled * speed}px)`
+    })
   })
 })
