@@ -1,103 +1,104 @@
-// Mobile Menu Toggle
-const mobileMenuToggle = document.querySelector(".mobile-menu-toggle")
-const navMenu = document.querySelector(".nav-menu")
-
-mobileMenuToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active")
-})
-
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll(".nav-menu a")
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active")
-  })
-})
-
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
-    }
-  })
-})
-
-// Form submission handler
-const joinForm = document.getElementById("joinForm")
-joinForm.addEventListener("submit", (e) => {
-  e.preventDefault()
-
-  const name = document.getElementById("name").value
-  const email = document.getElementById("email").value
-  const grade = document.getElementById("grade").value
-  const message = document.getElementById("message").value
-
-  // In a real application, you would send this data to a server
-  console.log("Form submitted:", { name, email, grade, message })
-
-  // Show success message
-  alert(
-    `Thanks for joining, ${name}! We'll send you an email at ${email} with more information about our next meeting.`,
-  )
-
-  // Reset form
-  joinForm.reset()
-})
-
-let lastScroll = 0
-const navbar = document.querySelector(".navbar")
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset
-
-  if (currentScroll > 50) {
-    navbar.classList.add("scrolled")
-  } else {
-    navbar.classList.remove("scrolled")
+// Smooth scroll to section
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    window.scrollTo({
+      top: section.offsetTop - 80, // offset for fixed nav
+      behavior: "smooth",
+    });
   }
-
-  lastScroll = currentScroll
-})
-
-// Animate elements on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px",
 }
+
+// Handle nav and hero button clicks
+document.querySelectorAll("[data-section]").forEach((link) => {
+  link.addEventListener("click", () => {
+    const sectionId = link.getAttribute("data-section");
+    scrollToSection(sectionId);
+
+    // Close mobile menu if open
+    mobileMenu.classList.remove("open");
+    mobileMenuBtn.classList.remove("active");
+
+    // Update active desktop nav link
+    document
+      .querySelectorAll(".nav-link.active")
+      .forEach((el) => el.classList.remove("active"));
+    const desktopLink = document.querySelector(
+      `.nav-link[data-section="${sectionId}"]`
+    );
+    if (desktopLink) desktopLink.classList.add("active");
+  });
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+mobileMenuBtn.addEventListener("click", () => {
+  const isOpen = mobileMenu.classList.toggle("open");
+  mobileMenuBtn.classList.toggle("active", isOpen);
+});
+
+// Highlight active section while scrolling
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("section[id]");
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  document
+    .querySelectorAll(".nav-link")
+    .forEach((link) => link.classList.remove("active"));
+  const activeLink = document.querySelector(
+    `.nav-link[data-section="${currentSection}"]`
+  );
+  if (activeLink) activeLink.classList.add("active");
+});
+
+// Handle join form submission
+const joinForm = document.getElementById("joinForm");
+if (joinForm) {
+  joinForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    alert("Thanks for joining! We'll reach out soon 🌵");
+    joinForm.reset();
+  });
+}
+
+// Animate elements on scroll (fade-up effect)
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: "0px 0px -100px 0px",
+};
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = "1"
-      entry.target.style.transform = "translateY(0)"
+      entry.target.classList.add("visible");
     }
-  })
-}, observerOptions)
+  });
+}, observerOptions);
 
-// Observe all cards and sections with stagger effect
 document.addEventListener("DOMContentLoaded", () => {
-  const animatedElements = document.querySelectorAll(".about-card, .event-card, .project-card, .hero-card")
+  const animatedElements = document.querySelectorAll(
+    ".card, .program-card, .event-card, .hero-card"
+  );
 
-  animatedElements.forEach((el, index) => {
-    el.style.opacity = "0"
-    el.style.transform = "translateY(30px)"
-    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`
-    observer.observe(el)
-  })
+  animatedElements.forEach((el) => observer.observe(el));
 
-  // Add parallax effect to hero cards
-  const heroCards = document.querySelectorAll(".hero-card")
+  // Parallax effect for hero visuals
+  const heroCards = document.querySelectorAll(".hero-card");
   window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset
+    const scrolled = window.pageYOffset;
     heroCards.forEach((card, index) => {
-      const speed = 0.05 * (index + 1)
-      card.style.transform = `translateY(${scrolled * speed}px)`
-    })
-  })
-})
+      const speed = 0.05 * (index + 1);
+      card.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+  });
+});

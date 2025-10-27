@@ -1,215 +1,241 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cactus Coding - Scottsdale Hack Club</title>
-  <meta name="description" content="A Hack Club for homeschooled high schoolers in Scottsdale, Arizona. Build projects, learn together, and make friends who code.">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <nav class="nav">
-    <div class="container nav-container">
-      <div class="nav-header">
-        <div class="nav-logo">
-          <div class="logo-icon">🌵</div>
-          <div>
-            <h1 class="logo-title">Cactus Coding</h1>
-            <p class="logo-subtitle">Scottsdale Hack Club</p>
-          </div>
-        </div>
-
-        <div class="nav-links">
-          <button class="nav-link active" data-section="home">Home</button>
-          <button class="nav-link" data-section="about">About</button>
-          <button class="nav-link" data-section="programs">Programs</button>
-          <button class="nav-link" data-section="events">Events</button>
-          <button class="nav-link" data-section="join">Join</button>
-        </div>
-
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-          <div class="hamburger">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </div>
-        </button>
-      </div>
-
-    
-      <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-link" data-section="home">Home</button>
-        <button class="mobile-link" data-section="about">About</button>
-        <button class="mobile-link" data-section="programs">Programs</button>
-        <button class="mobile-link" data-section="events">Events</button>
-        <button class="mobile-link" data-section="join">Join</button>
-      </div>
-    </div>
-  </nav>
-
- 
-  <section id="home" class="hero-section">
-    <div class="background-icons">
-      <div class="bg-icon" style="top: 5rem; left: 2.5rem; font-size: 9rem;">🌵</div>
-      <div class="bg-icon" style="top: 10rem; right: 5rem; font-size: 7rem;">🌵</div>
-      <div class="bg-icon" style="bottom: 5rem; left: 25%; font-size: 6rem;">🌵</div>
-      <div class="bg-icon" style="top: 15rem; right: 33%; font-size: 5rem;">🏜️</div>
-    </div>
-
-    <div class="container hero-container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            Scottsdale, Arizona 🏜️
-          </div>
-          <h2 class="hero-title">
-            Code in the <span class="text-primary">Desert</span>
-          </h2>
-          <p class="hero-description">
-            A Hack Club for homeschooled high schoolers building projects, learning together, and growing our coding
-            skills in the heart of Scottsdale.
-          </p>
-          <div class="hero-buttons">
-            <button class="btn btn-primary btn-lg" data-section="join">Join Our Club</button>
-            <button class="btn btn-outline btn-lg" data-section="about">Learn More</button>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-card">
-            <div class="hero-cacti">
-              <div style="font-size: 7rem;">🌵</div>
-              <div style="font-size: 9rem;">🌵</div>
-              <div style="font-size: 6rem;">🌵</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cactus Coding - Scottsdale Hack Club</title>
+    <meta
+      name="description"
+      content="A Hack Club for homeschooled high schoolers in Scottsdale, Arizona. Build projects, learn together, and make friends who code."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container nav-container">
+        <div class="nav-header">
+          <div class="nav-logo">
+            <div class="logo-icon">🌵</div>
+            <div>
+              <h1 class="logo-title">Cactus Coding</h1>
+              <p class="logo-subtitle">Scottsdale Hack Club</p>
             </div>
-            <div class="hero-sun">☀️</div>
-            <div class="hero-gradient"></div>
           </div>
-          <div class="hero-badge-float">
-            <div class="badge-float-content">
-              <div class="badge-icon">💻</div>
-              <div>
-                <p class="badge-title">Monthy Meetings</p>
-                <!-- <p class="badge-subtitle">Every Saturday</p> -->
+
+          <div class="nav-links">
+            <button class="nav-link active" data-section="home">Home</button>
+            <button class="nav-link" data-section="about">About</button>
+            <button class="nav-link" data-section="programs">Programs</button>
+            <button class="nav-link" data-section="events">Events</button>
+            <button class="nav-link" data-section="join">Join</button>
+          </div>
+
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Toggle menu"
+          >
+            <div class="hamburger">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </div>
+          </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+          <button class="mobile-link" data-section="home">Home</button>
+          <button class="mobile-link" data-section="about">About</button>
+          <button class="mobile-link" data-section="programs">Programs</button>
+          <button class="mobile-link" data-section="events">Events</button>
+          <button class="mobile-link" data-section="join">Join</button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+      <div class="background-icons">
+        <div class="bg-icon" style="top: 5rem; left: 2.5rem; font-size: 9rem">
+          🌵
+        </div>
+        <div class="bg-icon" style="top: 10rem; right: 5rem; font-size: 7rem">
+          🌵
+        </div>
+        <div class="bg-icon" style="bottom: 5rem; left: 25%; font-size: 6rem">
+          🌵
+        </div>
+        <div class="bg-icon" style="top: 15rem; right: 33%; font-size: 5rem">
+          🏜️
+        </div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">Scottsdale, Arizona 🏜️</div>
+            <h2 class="hero-title">
+              Code in the <span class="text-primary">Desert</span>
+            </h2>
+            <p class="hero-description">
+              A Hack Club for homeschooled high schoolers building projects,
+              learning together, and growing our coding skills in the heart of
+              Scottsdale.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary btn-lg" data-section="join">
+                Join Our Club
+              </button>
+              <button class="btn btn-outline btn-lg" data-section="about">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card">
+              <div class="hero-cacti">
+                <div style="font-size: 7rem">🌵</div>
+                <div style="font-size: 9rem">🌵</div>
+                <div style="font-size: 6rem">🌵</div>
+              </div>
+              <div class="hero-sun">☀️</div>
+              <div class="hero-gradient"></div>
+            </div>
+            <div class="hero-badge-float">
+              <div class="badge-float-content">
+                <div class="badge-icon">💻</div>
+                <div>
+                  <p class="badge-title">Monthy Meetings</p>
+                  <!-- <p class="badge-subtitle">Every Saturday</p> -->
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">What is Cactus Coding?</h2>
-        <p class="section-description">
-          We're a community of homeschooled high schoolers passionate about technology and creativity
-        </p>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">🚀</div>
-          <h3 class="card-title">Build Projects</h3>
-          <p class="card-text">
-            Work on real projects that matter to you. From websites to games, apps to art - if you can code it,
-            we'll help you build it.
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What is Cactus Coding?</h2>
+          <p class="section-description">
+            We're a community of homeschooled high schoolers passionate about
+            technology and creativity
           </p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3 class="card-title">Learn Together</h3>
-          <p class="card-text">
-            No experience required! We learn from each other through workshops, pair programming, and collaborative
-            projects.
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon">🚀</div>
+            <h3 class="card-title">Build Projects</h3>
+            <p class="card-text">
+              Work on real projects that matter to you. From websites to games,
+              apps to art - if you can code it, we'll help you build it.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3 class="card-title">Learn Together</h3>
+            <p class="card-text">
+              No experience required! We learn from each other through
+              workshops, pair programming, and collaborative projects.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🌟</div>
+            <h3 class="card-title">Make Friends</h3>
+            <p class="card-text">
+              Connect with other homeschooled teens who share your passion for
+              technology in a supportive, creative environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="programs-section">
+      <div class="background-icons">
+        <div
+          class="bg-icon"
+          style="top: 2.5rem; right: 2.5rem; font-size: 8rem"
+        >
+          🦎
+        </div>
+        <div
+          class="bg-icon"
+          style="bottom: 5rem; left: 2.5rem; font-size: 7rem"
+        >
+          🌵
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What We Do</h2>
+          <p class="section-description">
+            Every meeting is packed with hands-on learning and creative coding
           </p>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🌟</div>
-          <h3 class="card-title">Make Friends</h3>
-          <p class="card-text">
-            Connect with other homeschooled teens who share your passion for technology in a supportive, creative
-            environment.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <section id="programs" class="programs-section">
-    <div class="background-icons">
-      <div class="bg-icon" style="top: 2.5rem; right: 2.5rem; font-size: 8rem;">🦎</div>
-      <div class="bg-icon" style="bottom: 5rem; left: 2.5rem; font-size: 7rem;">🌵</div>
-    </div>
-
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">What We Do</h2>
-        <p class="section-description">
-          Every meeting is packed with hands-on learning and creative coding
-        </p>
-      </div>
-
-      <div class="programs-grid">
-        <div class="program-card">
-          <div class="program-header">
-            <div class="program-icon">💡</div>
-            <div>
-              <h3 class="program-title">Workshops</h3>
-              <p class="program-text">
-                Learn web development, Python, game design, and more through interactive workshops led by members
-                and guest speakers.
-              </p>
+        <div class="programs-grid">
+          <div class="program-card">
+            <div class="program-header">
+              <div class="program-icon">💡</div>
+              <div>
+                <h3 class="program-title">Workshops</h3>
+                <p class="program-text">
+                  Learn web development, Python, game design, and more through
+                  interactive workshops led by members and guest speakers.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="program-card">
-          <div class="program-header">
-            <div class="program-icon">🎮</div>
-            <div>
-              <h3 class="program-title">Hackathons</h3>
-              <p class="program-text">
-                Participate in local and online hackathons where you'll build projects in 24-48 hours and compete
-                for prizes.
-              </p>
+          <div class="program-card">
+            <div class="program-header">
+              <div class="program-icon">🎮</div>
+              <div>
+                <h3 class="program-title">Hackathons</h3>
+                <p class="program-text">
+                  Participate in local and online hackathons where you'll build
+                  projects in 24-48 hours and compete for prizes.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="program-card">
-          <div class="program-header">
-            <div class="program-icon">🎨</div>
-            <div>
-              <h3 class="program-title">Project Time</h3>
-              <p class="program-text">
-                Work on your personal projects with support from the group. Get feedback, debug together, and
-                celebrate wins.
-              </p>
+          <div class="program-card">
+            <div class="program-header">
+              <div class="program-icon">🎨</div>
+              <div>
+                <h3 class="program-title">Project Time</h3>
+                <p class="program-text">
+                  Work on your personal projects with support from the group.
+                  Get feedback, debug together, and celebrate wins.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="program-card">
-          <div class="program-header">
-            <div class="program-icon">🍕</div>
-            <div>
-              <h3 class="program-title">Social Events</h3>
-              <p class="program-text">
-                Pizza parties, game nights, and field trips to local tech companies. Coding is better with friends!
-              </p>
+          <div class="program-card">
+            <div class="program-header">
+              <div class="program-icon">🍕</div>
+              <div>
+                <h3 class="program-title">Social Events</h3>
+                <p class="program-text">
+                  Pizza parties, game nights, and field trips to local tech
+                  companies. Coding is better with friends!
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  
-  <!-- <section id="events" class="events-section">
+    <!-- <section id="events" class="events-section">
     <div class="background-icons">
       <div class="bg-icon" style="top: 5rem; left: 5rem; font-size: 7rem;">🦂</div>
       <div class="bg-icon" style="bottom: 5rem; right: 5rem; font-size: 8rem;">🌵</div>
@@ -315,51 +341,83 @@
       </div>
     </div>
   </section> -->
-
-  <section id="nov6-signup" class="signup-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Sign Up for the November 6 Meeting</h2>
-        <p class="section-description">
-          Reserve your spot for our next meetup! We'll be coding, collaborating, and having fun.
-        </p>
-      </div>
-
-      <div class="form-card">
-        <!-- Fillout form embed -->
-        <div style="width:100%;height:500px;" 
-             data-fillout-id="jZGgmZmbgBus" 
-             data-fillout-embed-type="standard" 
-             data-fillout-inherit-parameters 
-             data-fillout-dynamic-resize>
+    <section id="donate" class="donate-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Support Cactus Coding</h2>
+          <p class="section-description">
+            Help us provide workshops, events, and resources for homeschooled
+            high schoolers in Scottsdale. Every donation makes a difference!
+          </p>
         </div>
-        <script src="https://server.fillout.com/embed/v1/"></script>
-      </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-logo">
-        <div class="logo-icon">🌵</div>
-        <div>
-          <h3 class="footer-title">Cactus Coding</h3>
-          <p class="footer-subtitle">Scottsdale Hack Club</p>
+        <div class="donate-card" style="display: flex; justify-content: center">
+          <iframe
+            src="https://hcb.hackclub.com/donations/start/cactus-coding"
+            name="donateFrame"
+            style="border: none; max-width: 100%; width: 100%; height: 1000px"
+            scrolling="yes"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            allowfullscreen
+          >
+          </iframe>
         </div>
       </div>
-      <div class="footer-info">
-        <p class="footer-text">
-          Part of the 
-          <a href="https://hackclub.com" target="_blank" rel="noopener noreferrer" class="footer-link">
-            Hack Club
-          </a> 
-          network
-        </p>
-        <p class="footer-text">Made with 💚 in Scottsdale, Arizona</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <section id="nov6-signup" class="signup-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Sign Up for the November 6 Meeting</h2>
+          <p class="section-description">
+            Reserve your spot for our next meetup! We'll be coding,
+            collaborating, and having fun.
+          </p>
+        </div>
+
+        <div class="form-card">
+          <!-- Fillout form embed -->
+          <div
+            style="width: 100%; height: 500px"
+            data-fillout-id="jZGgmZmbgBus"
+            data-fillout-embed-type="standard"
+            data-fillout-inherit-parameters
+            data-fillout-dynamic-resize
+          ></div>
+          <script src="https://server.fillout.com/embed/v1/"></script>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-logo">
+          <div class="logo-icon">🌵</div>
+          <div>
+            <h3 class="footer-title">Cactus Coding</h3>
+            <p class="footer-subtitle">Scottsdale Hack Club</p>
+          </div>
+        </div>
+        <div class="footer-info">
+          <p class="footer-text">
+            Part of the
+            <a
+              href="https://hackclub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-link"
+            >
+              Hack Club
+            </a>
+            network
+          </p>
+          <p class="footer-text">Made with 💚 in Scottsdale, Arizona</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

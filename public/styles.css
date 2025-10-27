@@ -723,3 +723,25 @@
       text-align: right;
     }
   }
+
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.nav-link.active {
+  color: #00aa55; /* your accent color */
+  font-weight: bold;
+}
